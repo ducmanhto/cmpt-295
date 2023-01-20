@@ -17,7 +17,7 @@ typedef unsigned char *byte_pointer;
 void show_bytes(byte_pointer start, size_t len) {
   size_t i;
   for (i = 0; i < len; i++)
-    printf(" %p 0x%.2x", start + i, start[i]); 	
+    printf(" %p 0x%.2x \n", start + i, start[i]); 	
   printf("\n");
   return;	
 }
@@ -38,7 +38,7 @@ void show_bytes_2(byte_pointer start, size_t len) {
   size_t i;
   byte_pointer p = start;
   for (i = 0; i < len; i++)
-    printf(" %p 0x%.2x",start + i , *(start + i)); 	
+    printf(" %p 0x%.2x \n",start + i , *(start + i)); 	
   printf("\n");
   return;		
 }
@@ -107,7 +107,7 @@ int mask_LSbits(int n) {
   else if (n <= 0)
     return answer;
   else
-    return ~(answer >> (size - n));
+    return (~(unsigned)answer >> (size - n));
 }
 
 void show_int(int x) {

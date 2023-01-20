@@ -41,7 +41,9 @@ int main() {
     show_bits(c);
 
     //Test for Q3 e
-    
+    show_int(mask_LSbits(5));
+    show_int(mask_LSbits(987654));
+    show_int(mask_LSbits(-2));
 
     return 0;
 
