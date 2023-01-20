@@ -26,12 +26,25 @@ void show_bytes(byte_pointer start, size_t len) {
 // Put your answer to Question 3 b) here as a comment
 // The target machine is a little endian computer as the LSB is stored at the lowest numbered memory address.
 // Based on the data of two test cases:
-// pval = 0x7fff1d5b8890
-// 0x7fff1d5b8878 0x7fff1d5b8879 0x7fff1d5b887a 0x7fff1d5b887b 0x7fff1d5b887c 0x7fff1d5b887d 0x7fff1d5b887e 0x7fff1d5b887f
-// 90 88 5b 1d ff 7f 00 00
-// pval = 0x7fff1d5b8894
-// 0x7fff1d5b8878 0x7fff1d5b8879 0x7fff1d5b887a 0x7fff1d5b887b 0x7fff1d5b887c 0x7fff1d5b887d 0x7fff1d5b887e 0x7fff1d5b887f 
-// 94 88 5b 1d ff 7f 00 00
+// pval = 0x7ffe8604c864
+// 0x7ffe8604c848 0x64 
+// 0x7ffe8604c849 0xc8 
+// 0x7ffe8604c84a 0x04 
+// 0x7ffe8604c84b 0x86 
+// 0x7ffe8604c84c 0xfe 
+// 0x7ffe8604c84d 0x7f 
+// 0x7ffe8604c84e 0x00 
+// 0x7ffe8604c84f 0x00
+
+// pval = 0x7ffe8604c860
+// 0x7ffe8604c848 0x60 
+// 0x7ffe8604c849 0xc8 
+// 0x7ffe8604c84a 0x04 
+// 0x7ffe8604c84b 0x86 
+// 0x7ffe8604c84c 0xfe 
+// 0x7ffe8604c84d 0x7f 
+// 0x7ffe8604c84e 0x00 
+// 0x7ffe8604c84f 0x00
 
 // Question 3 c.
 void show_bytes_2(byte_pointer start, size_t len) {
