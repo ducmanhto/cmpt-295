@@ -36,8 +36,9 @@ void show_bytes(byte_pointer start, size_t len) {
 // Question 3 c.
 void show_bytes_2(byte_pointer start, size_t len) {
   size_t i;
+  byte_pointer p = start;
   for (i = 0; i < len; i++)
-    printf(" %.2x", start[i]); 	
+    printf(" %p 0x%.2x",start + i , *(start + i)); 	
   printf("\n");
   return;		
 }
@@ -96,10 +97,17 @@ void show_bits(int decimal) {
 // Question 3 e.
 int mask_LSbits(int n) {
 	
-  // put your code here!
-
-  // feel free to modify this return statement
-  return 0; 
+  //
+  int answer = 0;
+  int size = sizeof(int)*8;
+  
+  //
+  if (n >= size)
+    return ~answer;
+  else if (n <= 0)
+    return answer;
+  else
+    return ~(answer >> (size - n));
 }
 
 void show_int(int x) {
