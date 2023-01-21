@@ -97,17 +97,17 @@ void show_bits(int decimal) {
 // Question 3 e.
 int mask_LSbits(int n) {
 	
-  //
+  //Declare size and answer
   int answer = 0;
   int size = sizeof(int)*8;
   
-  //
   if (n >= size)
-    return ~answer;
+    return ~answer; //Return decimal with bit pattern of all 1s
   else if (n <= 0)
-    return answer;
+    return answer;  //Return decimal with bit pattern of all 0s
   else
-    return (~(unsigned)answer >> (size - n));
+    return (~(unsigned)answer >> (size - n)); //Return answer after complementing 
+                                              //and logically shifting right
 }
 
 void show_int(int x) {
