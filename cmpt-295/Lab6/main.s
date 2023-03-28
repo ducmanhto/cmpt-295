@@ -87,21 +87,19 @@ main:
 	movl	0(%r13,%rdx,4), %ecx
 	movl	%ecx, -4(%r12)
 	movl	%eax, 0(%r13,%rdx,4)
-	cmpl	$4000000, %ebp
+	cmpl	$2000000, %ebp
 	jne	.L2
 	xorl	%edi, %edi
 	leaq	144(%rsp), %rsi
 	call	getrusage@PLT
-	movq	8(%rsp), %rcx
-	movl	$1, %edi
 	imulq	$1000000, (%rsp), %rax
+	addq	8(%rsp), %rax
+	leaq	.LC0(%rip), %rsi
 	imulq	$1000000, 144(%rsp), %rdx
 	addq	152(%rsp), %rdx
-	leaq	.LC0(%rip), %rsi
-	addq	%rcx, %rax
+	movl	$1, %edi
 	subq	%rax, %rdx
 	xorl	%eax, %eax
-	subq	%rcx, %rdx
 	call	__printf_chk@PLT
 	movq	296(%rsp), %rax
 	xorq	%fs:40, %rax
@@ -124,7 +122,7 @@ main:
 	.cfi_endproc
 .LFE39:
 	.size	main, .-main
-	.comm	A,16000000,32
+	.comm	A,8000000,32
 	.ident	"GCC: (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0"
 	.section	.note.GNU-stack,"",@progbits
 	.section	.note.gnu.property,"a"

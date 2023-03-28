@@ -17,7 +17,7 @@
 void qSort1(int *A, int n);
 void qSort2(int *A, int n);
 
-#define N 4000000
+#define N 2000000
 
 int A[N];
 
@@ -42,7 +42,7 @@ void main(int argc, char *argv[]) {
          A[pos] = tmp;
     }
     getrusage(RUSAGE_SELF, &end);
-    printf("It took %ld microseconds to initialize the array.\n", (end.ru_utime.tv_sec*1000000 + end.ru_utime.tv_usec) - (start.ru_utime.tv_sec*1000000 + start.ru_utime.tv_usec) - start.ru_utime.tv_usec);
+    printf("It took %ld microseconds to initialize the array.\n", (end.ru_utime.tv_sec*1000000 + end.ru_utime.tv_usec) - (start.ru_utime.tv_sec*1000000 + start.ru_utime.tv_usec));
 	 
 
     // For Part 2:
